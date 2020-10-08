@@ -26,7 +26,7 @@ module "storage-account" {
 
 ```
 module "storage-account" {
-  source      = "dfar-io/app-service/azurerm"
+  source      = "dfar-io/storage-account/azurerm"
   name        = "STORAGE_ACCOUNT_NAME"
   rg_location = azurerm_resource_group.rg.location
   rg_name     = azurerm_resource_group.rg.name
@@ -41,7 +41,7 @@ module "storage-account" {
 
 ```
 module "storage-account" {
-  source      = "dfar-io/app-service/azurerm"
+  source      = "dfar-io/storage-account/azurerm"
   name        = "STORAGE_ACCOUNT_NAME"
   rg_location = azurerm_resource_group.rg.location
   rg_name     = azurerm_resource_group.rg.name
