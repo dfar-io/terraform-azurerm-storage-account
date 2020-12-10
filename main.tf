@@ -4,9 +4,8 @@ resource "azurerm_storage_account" "sa" {
   location                 = var.rg_location
   account_tier             = "Standard"
   account_replication_type = "GRS"
+  allow_blob_public_access = var.allow_blob_public_access
 
-  # conditional block
-  # https://github.com/hashicorp/terraform/issues/19853#issuecomment-450551650
   dynamic "static_website" {
     for_each = var.static_website.index_document == null && var.static_website.error_404_document == null ? [] : list(var.static_website)
 
