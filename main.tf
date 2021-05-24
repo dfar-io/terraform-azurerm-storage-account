@@ -18,9 +18,9 @@ resource "azurerm_storage_account" "sa" {
 
 resource "azurerm_storage_container" "container" {
   count                 = length(var.containers)
-  name                  = element(var.containers, count.index)
+  name                  = element(var.containers, count.index).name
   storage_account_name  = var.name
-  container_access_type = "private"
+  container_access_type = element(var.containers, count.index).container_access_type
 
   depends_on = [
     azurerm_storage_account.sa

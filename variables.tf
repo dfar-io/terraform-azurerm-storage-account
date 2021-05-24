@@ -26,7 +26,10 @@ variable "static_website" {
 
 variable "containers" {
   description = "List of containers to create with storage account."
-  type = list(string)
+  type = list(object({
+    name = string
+    container_access_type = string
+  }))
   default = []
 }
 
